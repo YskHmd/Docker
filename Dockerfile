@@ -1,8 +1,11 @@
 FROM ubuntu:20.04
 
-RUN apt update
-RUN apt install -y curl
+RUN touch 1.txt
 
-COPY . /app/
+WORKDIR /app/my_dir
+RUN touch 2.txt
 
-CMD ["ls", "-la"]
+WORKDIR ..
+RUN touch 3.txt
+
+CMD ["bash"]
